@@ -1,11 +1,11 @@
-const mongoose = require('mongoose')
-const { Schema } = mongoose
-const { compareSync, hashSync, genSaltSync } = require('bcryptjs');
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
+const { compareSync, hashSync, genSaltSync } = require("bcryptjs");
 
 const UserSchema = new Schema({
     name: { type: String, required: true },
     username: { type: String, required: true },
-    password: { type: String, required: true }
+    password: { type: String, required: true },
 });
 
 UserSchema.methods.toJSON = function() {
@@ -16,14 +16,12 @@ UserSchema.methods.toJSON = function() {
 
 UserSchema.methods.comparePassword = function(password) {
     return compareSync(password, this.password);
-}
+};
 
-
-UserSchema.pre('save', async function(next) {
+UserSchema.pre("save", async function(next) {
     const user = this;
-    if (!user.isModified('password')) {
+    if (!user.isModified("password")) {
         return next();
-
     }
 
     const salt = genSaltSync(10);
@@ -32,5 +30,4 @@ UserSchema.pre('save', async function(next) {
     next();
 });
 
-
-module.exports = mongoose.model('user', UserSchema)
+module.exports = mongoose.model("user", UserSchema);

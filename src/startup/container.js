@@ -74,8 +74,8 @@ container
     })
     .register({
         UserRepository: asClass(UserRepository).singleton(),
-        IdeaRepository: asClass(IdeaRepository).singleton,
-        CommentRepository: asClass(CommentRepository).singleton,
+        IdeaRepository: asClass(IdeaRepository).singleton(),
+        CommentRepository: asClass(CommentRepository).singleton(),
     });
 
 module.exports = container;
