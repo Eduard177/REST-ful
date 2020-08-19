@@ -7,13 +7,13 @@ const IdeaSchema = new Schema({
     upvotes: [{ type: Boolean }],
     downvotes: [{ type: Boolean }],
     author: {
-        type: Schema.type.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "user",
         required: true,
         autopopulate: true,
     },
     comments: [{
-        type: Schema.type.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "comment",
         required: true,
         autopopulate: true,
