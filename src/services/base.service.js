@@ -27,7 +27,7 @@ class BaseService {
         return await this.repository.getAll();
     }
 
-    async create() {
+    async create(entity) {
         return await this.repository.create(entity);
     }
 
