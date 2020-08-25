@@ -1,11 +1,11 @@
 const { Router } = require("express");
-const { AuthMiddelware } = require('../middlewares')
+const { AuthMiddelware, ParseIntMiddelware } = require("../middlewares");
 
 module.exports = function({ UserController }) {
     const router = Router();
 
+    router.get("", [AuthMiddelware, ParseIntMiddelware], UserController.getAll);
     router.get("/:userId", UserController.get);
-    router.get("", [AuthMiddelware], UserController.getAll);
     router.patch("/:userId", UserController.update);
     router.delete("/:userId", UserController.delete);
 
