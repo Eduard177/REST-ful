@@ -10,14 +10,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Eduard177/REST-ful.git"
+        "url": "git+https://github.com/Eduard177/Share-your-idea.git"
     },
     "author": "Eduard Pichardo",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/Eduard177/REST-ful/issues"
+        "url": "https://github.com/Eduard177/Share-your-idea/issues"
     },
-    "homepage": "https://github.com/Eduard177/REST-ful#readme",
+    "homepage": "https://github.com/Eduard177/Share-your-idea#readme",
     "dependencies": {
         "awilix": "^4.2.6",
         "bcryptjs": "^2.4.3",
