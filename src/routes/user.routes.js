@@ -15,8 +15,8 @@ module.exports = function({ UserController }) {
         UserController.getAll
     );
     router.get("/:userId", UserController.get);
-    router.patch("/:userId", UserController.update);
-    router.delete("/:userId", UserController.delete);
+    router.patch("/:userId", AuthMiddelware, UserController.update);
+    router.delete("/:userId", AuthMiddelware, UserController.delete);
 
     return router;
 };
